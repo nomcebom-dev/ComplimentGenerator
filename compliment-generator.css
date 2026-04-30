@@ -1,1 +1,64 @@
 
+    body {
+      background: #fff0f5;
+      font-family: Georgia, serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #c2185b;
+      margin-bottom: 6px;
+    }
+
+    p.tagline {
+      color: #aaa;
+      font-size: 14px;
+      margin-bottom: 40px;
+    }
+
+    /* the box that shows the compliment */
+    .box {
+      background: white;
+      border: 2px solid #f48fb1;
+      border-radius: 12px;
+      padding: 30px 24px;
+      max-width: 480px;
+      width: 100%;
+      margin-bottom: 24px;
+    }
+
+    .box p {
+      font-size: 1.1rem;
+      color: #333;
+      line-height: 1.8;
+      min-height: 60px;
+    }
+
+    button {
+      background: #e91e8c;
+      color: white;
+      border: none;
+      padding: 14px 36px;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      font-family: Georgia, serif;
+    }
+
+    button:hover {
+      background: #c2185b;
+    }
+
+    .count {
+      margin-top: 16px;
+      font-size: 13px;
+      color: #bbb;
+    }
