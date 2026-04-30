@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You Are That Girl</title>
+  <style>
+    body {
+      background: #fff0f5;
+      font-family: Georgia, serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #c2185b;
+      margin-bottom: 6px;
+    }
+
+    p.tagline {
+      color: #aaa;
+      font-size: 14px;
+      margin-bottom: 40px;
+    }
+
+    /* the box that shows the compliment */
+    .box {
+      background: white;
+      border: 2px solid #f48fb1;
+      border-radius: 12px;
+      padding: 30px 24px;
+      max-width: 480px;
+      width: 100%;
+      margin-bottom: 24px;
+    }
+
+    .box p {
+      font-size: 1.1rem;
+      color: #333;
+      line-height: 1.8;
+      min-height: 60px;
+    }
+
+    button {
+      background: #e91e8c;
+      color: white;
+      border: none;
+      padding: 14px 36px;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      font-family: Georgia, serif;
+    }
+
+    button:hover {
+      background: #c2185b;
+    }
+
+    .count {
+      margin-top: 16px;
+      font-size: 13px;
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌸 You Are That Girl</h1>
+  <p class="tagline">for every Black girl who needed to hear this</p>
+
+  <div class="box">
+    <p id="compliment">Click the button to get your compliment 💕</p>
+  </div>
+
+  <button onclick="getCompliment()">Give me my flowers 🌸</button>
+
+  <p class="count">received: <span id="num">0</span></p>
+
+  <script>
+    let compliments = [
+      "Your presence in a room changes the energy. People feel you before you even speak.",
+      "You are not too much. You are exactly enough.",
+      "Your skin is not a trend. It is ancient and it is glorious.",
+      "You have survived 100% of your hardest days. That is strength.",
+      "The girl you are becoming is going to look back and be so proud of you.",
+      "Your hair does things no one else's can. That is a gift.",
+      "You walked into rooms that weren't built for you and made them yours.",
+      "You are not behind. You are on your own timeline.",
+      "Crying and still showing up is one of the strongest things a person can do.",
+      "There is no version of beautiful that you don't fit.",
+      "Everything that was meant to stop you is now behind you.",
+      "You are building something real. It doesn't matter that no one can see it yet."
+    ];
+
+    let count = 0;
+    let last = -1;
+
+    function getCompliment() {
+      // pick random but not same one twice in a row
+      let index = last;
+      while (index === last) {
+        index = Math.floor(Math.random() * compliments.length);
+      }
+      last = index;
+
+      document.getElementById("compliment").textContent = compliments[index];
+
+      count++;
+      document.getElementById("num").textContent = count;
+    }
+  </script>
+
+</body>
+</html>
